@@ -16,8 +16,9 @@ import {
   Text,
   useColorScheme,
   View,
+  TextInput,
 } from 'react-native';
-
+import { Searchbar } from 'react-native-paper';
 import {
   Colors,
   DebugInstructions,
@@ -29,7 +30,7 @@ import {
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
+    <View style={styles.sectionContainer}>      
       <Text
         style={[
           styles.sectionTitle,
@@ -66,6 +67,9 @@ const App: () => Node = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <View style={styles.buscador}>
+          <Searchbar/>  
+        </View>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -90,6 +94,7 @@ const App: () => Node = () => {
   );
 };
 
+
 const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
@@ -106,6 +111,10 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  buscador: {
+    padding:15,
+
   },
 });
 

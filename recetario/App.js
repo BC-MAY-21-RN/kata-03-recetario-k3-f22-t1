@@ -22,51 +22,22 @@ import {
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>      
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const Item = ({ title, image }) => (
-  <View style={styles.item}>
-    <Image
-      style = {styles.img}
-      source = {{uri : `${image}`}}
-    />
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const Item = ({ title, image }) => (
+    <View style={styles.item}>
+      <Image
+        style = {styles.img}
+        source = {{uri : `${image}`}}
+      />
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
 
   const renderItem = ({ item }) => (
     <Item title={item.title} image={item.image} />
@@ -78,11 +49,10 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'light-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View style={styles.buscador}>
           <Searchbar/>  
         </View>
@@ -90,21 +60,15 @@ const App: () => Node = () => {
           style={{ 
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            
+          <ScrollView>
+            <Text style={styles.sectionTitle}>TRENDING</Text>
             <FlatList
               data={DATA}
               renderItem={renderItem}
               keyExtractor={item => item.id}
               horizontal={true}
             />
-          </Section>
-          <Section title="Step two">
-          </Section>
-          <Section title="Step tres">
-          </Section>
-          <Section title="Step cuatro">
-          </Section>
+          </ScrollView>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -113,21 +77,13 @@ const App: () => Node = () => {
 
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  }, 
+
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+    marginTop:30,
+    marginHorizontal:18,
+    color:'#e61b79',
   },
   buscador: {
     padding:15,
@@ -147,8 +103,8 @@ const styles = StyleSheet.create({
     color: "black",
   },
   img: {
-    width:70,
-    height:70,
+    width:200,
+    height:200,
     borderRadius: 5,
     
   },

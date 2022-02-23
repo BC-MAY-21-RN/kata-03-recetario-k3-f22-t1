@@ -14,9 +14,11 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  FlatList,
   useColorScheme,
   View,
   TextInput,
+  Image,
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import {
@@ -53,8 +55,22 @@ const Section = ({children, title}): Node => {
   );
 };
 
+const Item = ({ title, image }) => (
+  <View style={styles.item}>
+    <Image
+      style = {styles.img}
+      source = {{uri : `${image}`}}
+    />
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const renderItem = ({ item }) => (
+    <Item title={item.title} image={item.image} />
+  );
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -71,23 +87,24 @@ const App: () => Node = () => {
           <Searchbar/>  
         </View>
         <View
-          style={{
+          style={{ 
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+            
+            <FlatList
+              data={DATA}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
+              horizontal={true}
+            />
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Step two">
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
+          <Section title="Step tres">
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
+          <Section title="Step cuatro">
           </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -99,7 +116,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
-  },
+  }, 
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
@@ -116,6 +133,54 @@ const styles = StyleSheet.create({
     padding:15,
 
   },
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight:'bold',
+    color: "black",
+  },
+  img: {
+    width:70,
+    height:70,
+    borderRadius: 5,
+    
+  },
 });
 
+const DATA = [
+  { id: 1,
+    title: 'Pizza uno',
+    image: 'https://placeimg.com/200/200/nature'
+  },
+  { id: 2,
+    title: 'Pizza Dos',
+    image: 'https://placeimg.com/200/200/tech'
+  },
+  { id: 3,
+    title: 'Pizza tres',
+    image: 'https://placeimg.com/200/200/people'
+  },
+  {
+    id: 4,
+    title: 'Pizza cuatro',
+    image: 'https://placeimg.com/200/200/nature'
+  },
+  {
+    id: 5,
+    title: 'Pizza cinco',
+    image: 'https://placeimg.com/200/200/tech'
+  },
+  {
+    id: 6,
+    title: 'Pizza seis',
+    image: 'https://placeimg.com/200/200/people'
+  },
+];
 export default App;

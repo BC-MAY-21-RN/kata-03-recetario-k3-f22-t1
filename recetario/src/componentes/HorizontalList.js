@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View, FlatList,ScrollView, Image} from 'react-native';
+import {Text, View, FlatList,ScrollView, Image} from 'react-native';
 
 import RECETES from '../LocalData/RECETES';
-
+import styles from '../LocalData/styles';
 const HorizontalList = () =>{
     const Item = ({ title, image }) => (
         <View style={styles.item}>
@@ -30,34 +30,5 @@ const HorizontalList = () =>{
           />
         </ScrollView>
       );
-
 };
-
-
-const styles = StyleSheet.create({
-    sectionTitle: {
-      fontSize: 25,
-      fontWeight: '600',
-      marginTop:30,
-      marginHorizontal:18,
-      color:'#e61b79',
-    },
-    item: {
-        marginVertical: 8,
-        marginHorizontal: 16,
-      },
-      title: {
-        fontSize: 20,
-        fontWeight:'bold',
-        color: "black",
-      },
-      img: {
-        width:200,
-        height:200,
-        borderRadius: 5,
-        
-      },
-});
-
-
 export default HorizontalList;

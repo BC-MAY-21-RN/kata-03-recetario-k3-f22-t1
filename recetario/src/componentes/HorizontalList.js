@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, FlatList,ScrollView, Image} from 'react-native';
 
 import RECETES from '../LocalData/RECETES';
-import styles from '../LocalData/styles';
+import styles from '../styles';
 const HorizontalList = () =>{
     const Item = ({ title, image }) => (
         <View style={styles.item}>

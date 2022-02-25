@@ -6,25 +6,20 @@
    View,
  } from 'react-native';
  import { Searchbar } from 'react-native-paper';
- import {
-   Colors
- } from 'react-native/Libraries/NewAppScreen';
- 
  import HorizontalList from '../componentes/HorizontalList';
- import styles from '../LocalData/styles';
+ import styles from '../styles';
  const Home: ()=> Node = () => {
-   const isDarkMode = useColorScheme() === 'dark';
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
  
    return (
-     <SafeAreaView style={backgroundStyle}>
+     <SafeAreaView style={styles.backgroundApp}>
        <ScrollView
          contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
+         style={styles.backgroundApp}>
          <View style={styles.buscador}>
-           <Searchbar/>  
+           <Searchbar
+           style={styles.searchbar}
+            placeholder='What do you want to eat?'
+           />  
            <HorizontalList/> 
            <HorizontalList/>
          </View>

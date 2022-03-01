@@ -31,4 +31,20 @@ module.exports = StyleSheet.create({
         height:130,
         borderRadius: 5,  
     },
+    containerInfo:{
+        flex:1,
+        flexDirection:'column',
+        backgroundColor:'#282828',
+    },
+    imgInfo:{
+        flex:2,
+        opacity:0.6,
+
+    },
+    iconInfo:{
+        textAlign: 'center',
+        paddingHorizontal:10,
+        paddingVertical:3,
+    },
+    
 });

@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 module.exports = StyleSheet.create({
     backgroundApp:{
         backgroundColor:'#282828',
+        flex:1,
     },  
     buscador: {
         padding:15,
@@ -21,16 +22,29 @@ module.exports = StyleSheet.create({
     item: {
         marginVertical: 8,
         marginHorizontal: 16,
+        
     },
     title: {
+        fontSize: 20,
+        color: "white",
+        marginLeft:5,
+        
+    },
+    titleRL:{
         fontSize: 15,
         color: "white",
+        marginLeft:5,
     },
     img: {
-        width:130,
-        height:130,
+        width:200,
+        height:200,
         borderRadius: 5,  
     },
+    imgRL:{
+        width:140,
+        height:140,
+        borderRadius: 5,  
+    },  
     containerInfo:{
         flex:1,
         flexDirection:'column',
@@ -39,12 +53,18 @@ module.exports = StyleSheet.create({
     imgInfo:{
         flex:2,
         opacity:0.6,
+        flexDirection:"column",
 
     },
     iconInfo:{
         textAlign: 'center',
         paddingHorizontal:10,
         paddingVertical:3,
+    },
+    titleInfo:{
+        fontSize: 25,
+        color: "white",
+        marginLeft:30,
     },
     
 });

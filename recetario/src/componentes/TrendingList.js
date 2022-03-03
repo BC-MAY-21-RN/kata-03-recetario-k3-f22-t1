@@ -3,7 +3,7 @@ import {Text, View, FlatList,ScrollView, Image} from 'react-native';
 
 import RECETES from '../LocalData/RECETES';
 import styles from '../styles';
-const HorizontalList = () =>{
+const TrendingList = () =>{
     const Item = ({ title, image }) => (
         <View style={styles.item}>
           <Image
@@ -31,4 +31,4 @@ const HorizontalList = () =>{
         </ScrollView>
       );
 };
-export default HorizontalList;
+export default TrendingList;

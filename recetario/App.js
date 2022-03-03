@@ -5,7 +5,6 @@ import Product from './src/screens/Product';
 const App: ()=> Node = () => {
   
   return (
-    
     <Product/>
   );
 };

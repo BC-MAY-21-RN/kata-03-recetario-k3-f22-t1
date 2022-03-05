@@ -5,6 +5,8 @@
    View,
  } from 'react-native';
  import { Searchbar } from 'react-native-paper';
+
+ import SearchBar from '../componentes/SearchBar';
  import TrendingList from '../componentes/TrendingList';
  import RecentList from '../componentes/RecentList';
  import styles from '../styles';
@@ -15,10 +17,8 @@
        <ScrollView
          contentInsetAdjustmentBehavior="automatic">
          <View style={styles.buscador}>
-           <Searchbar
-           style={styles.searchbar}
-            placeholder='What do you want to eat?'
-           />  
+
+            <SearchBar/>
            <TrendingList/> 
            <RecentList/>
          </View>

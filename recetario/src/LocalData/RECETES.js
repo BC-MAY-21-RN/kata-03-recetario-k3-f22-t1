@@ -1,22 +1,32 @@
-export default RECETES=[
+export default RECETES=[ 
     { id: 0,
       title: 'Napolitan Pizza',
       image: require('../img/NapolitanPizza.png'),
       ingredients: [
         {
           id:0,
-          nameIngredient:"Pasta de Tomate",
-          cant:"1/4 taza",
+          nameIngredient:"puff pastry",
+          cant:"1 sheet",
         },
         {
           id:1,
-          nameIngredient:"Jamón",
-          cant:"2 tazas",
+          nameIngredient:"peperoni",
+          cant:"15 slices",
         },
         {
           id:2,
-          nameIngredient:"Aceitunas Verdes",
-          cant:"1/2 taza",
+          nameIngredient:"marinada sauce",
+          cant:"1 cup",
+        },
+        {
+          id:3,
+          nameIngredient:"sherdded mozzarella cheese",
+          cant:"1/2 cup",
+        },
+        {
+          id:4,
+          nameIngredient:"egg, for egg wash",
+          cant:"1",
         },
     ],
     },

@@ -6,11 +6,18 @@ module.exports = StyleSheet.create({
         backgroundColor:'#282828',
         flex:1,
     },  
-    buscador: {
-        padding:15,
+    searchBar:{
+        flexDirection:"row", 
+        alignItems:"center",
+        backgroundColor:"#343435",
+        borderRadius:15,
+        height:35,
+        justifyContent:"space-around"
     },
-    searchbar:{
-      backgroundColor:'#343435',
+    searchInput:{
+        width:'80%',
+        color:"white",
+        fontSize:15,
     },
     sectionTitle: {
         fontSize: 25,
@@ -31,9 +38,8 @@ module.exports = StyleSheet.create({
         
     },
     titleRL:{
-        fontSize: 15,
+        fontSize: 15.5,
         color: "white",
-        marginLeft:5,
     },
     img: {
         width:200,
@@ -41,8 +47,8 @@ module.exports = StyleSheet.create({
         borderRadius: 5,  
     },
     imgRL:{
-        width:140,
-        height:140,
+        width:125,
+        height:125,
         borderRadius: 5,  
     },  
     containerInfo:{
@@ -50,12 +56,18 @@ module.exports = StyleSheet.create({
         flexDirection:'column',
         backgroundColor:'#282828',
     },
-    imgInfo:{
+    headerItem:{
         flex:2,
-        opacity:0.6,
+        backgroundColor: 'rgba(52, 52, 52, 0.8)',
         flexDirection:"column",
 
     },
+    imgBackground:{
+        position:"absolute",
+        width:"100%",
+        height:"100%",
+        opacity:0.38,
+    },  
     iconInfo:{
         textAlign: 'center',
         paddingHorizontal:10,
@@ -64,7 +76,28 @@ module.exports = StyleSheet.create({
     titleInfo:{
         fontSize: 25,
         color: "white",
-        marginLeft:30,
+        paddingHorizontal:20,
     },
-    
+    containerIngredients:{
+        flex:3,
+        flexDirection:"column",
+        padding:20,
+        alignContent:"center"
+    },
+    itemIngredient:{
+        flex:1,
+        flexDirection:"row",
+        justifyContent:"space-between",
+        paddingVertical:15,
+        borderBottomWidth:1,
+        borderBottomColor:'#3e3e3e',
+    },
+    titleIngredient:{
+        fontSize:20,
+        color:"white",
+        marginTop:8
+    },
+    listIngredients:{
+        marginTop:15,
+    }
 });

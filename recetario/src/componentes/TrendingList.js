@@ -13,7 +13,6 @@ const TrendingList = () =>{
           <Text style={styles.title}>{title}</Text>
         </View>
       );
-
       const renderItem = ({ item }) => (
         <Item title={item.title} image={item.image} />
       );

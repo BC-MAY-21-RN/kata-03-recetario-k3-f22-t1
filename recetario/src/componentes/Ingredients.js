@@ -1,11 +1,8 @@
 import * as React from 'react';
-import { SafeAreaView, ScrollView, View, Text, Pressable, ImageBackground} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { List } from 'react-native-paper';
 
-import styles from '../styles';
 
-const Ingredient: ()=> Node = () =>{
+const Ingredients = () =>{
     return(
         <List.Section>
         <List.Subheader style={{color:"white"}}>INGREDIENTS</List.Subheader>
@@ -26,4 +23,4 @@ const Ingredient: ()=> Node = () =>{
     );
 };
 
-export default Ingredient;
+export default Ingredients;
